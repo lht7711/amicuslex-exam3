@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
+  position: relative;
+  z-index: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.modal-wrapper {
+  position: fixed;
+  z-index: 2000;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.4);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-wrapper.show {
+  display: block;
+}
+
+.modal-wrapper.closed{
+  display: none;
+}
+
+.modal {
+  display: block;
+  background: #f8f8f8;
+  width: 500px;
+  margin: 28px auto;
+  border-radius: 5px;
+}
+
+.modal-header {
+  display: flex;
+  padding: 16px;
+  border-bottom: solid 1px #dee2e6;
+}
+
+.modal-header > .modal-header-title {
+  flex: 1;
+  font-size: 1.25rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.modal-header > .modal-header-close {
+  height: auto;
+  margin: 0 5px 0 0;
+}
+
+.modal-content {
+  padding: 16px;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 5px;
+  justify-content: right;
+  padding: 16px;
+  border-top: solid 1px #dee2e6;
+}
+
+.btn {
+  outline: none;
+  background: #eee;
+  color: #292929;
+  border: none;
+  padding: 10px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+}
+
+.btn.btn-primary {
+  background: #0d6efd;
+  color: #f8f8f8;
+}
+
+.btn.btn-success {
+  background: #55e435;
+  color: #f8f8f8;
+}
+
+.btn.btn-secondary {
+  background: #6c757d;
+  color: #f8f8f8;
+}
+
+.btn-close {
+  color: #000;
+  outline: none;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition-duration: 0.3s;
+}
+
+.btn-close:hover {
+  color: #7a7a7a;
 }
